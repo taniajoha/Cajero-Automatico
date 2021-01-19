@@ -57,7 +57,7 @@ public class DineroServiceImpl implements DineroService {
             totalBanco += (dinero.getDenominacion()*dinero.getCantidad());
         }
 
-        if(valorTotal<totalBanco) throw new RuntimeException("No hay suficiente dinero para retirar");
+        if(valorTotal>totalBanco) throw new RuntimeException("No hay suficiente dinero para retirar");
 
         while(cantidad < valorTotal){
             diferencia -= denominacion;
